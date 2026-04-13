@@ -1,8 +1,10 @@
 const express=require('express');
 const app=express();
 const db=require('./db')
+require('dotenv').config();
 
 app.use(express.json()); 
+const PORT=process.env.PORT || 3000
 
 
 const Person = require('./models/Person');
@@ -69,6 +71,9 @@ const menuItemRoutes=require('./routes/menuItemRoutes')
 app.use('/person',personRoutes);
 app.use('/menu',menuItemRoutes);
 
-app.listen(3000,()=>{
-    console.log("server is listening")
+
+
+
+app.listen(PORT,()=>{
+    console.log(" listening on port 3000")
 });

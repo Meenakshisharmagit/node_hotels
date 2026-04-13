@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
 
-const mongoURL='mongodb://localhost:27017/hotels'
+//const mongoURL='mongodb://localhost:27017/hotels'
+const mongoURL=process.env.MONGODB_URL;
 
 //set up mongoose connection
 // Correct Way (Mongoose 6+ ke liye)
